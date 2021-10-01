@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link  rel="icon" href="data:image/png;base64,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">
+    <title>Ministry Of Home Affairs</title>
+    <style>
+        body{
+            background-image: color="black"
+        }
+    </style>
+</head>
+<body>
+    <img src="mha.png" width="500px">
+    <img src="https://mha.gov.in/sites/all/themes/mha/images/gandhi-logo.jpg">
+    <img src="https://mha.gov.in/sites/all/themes/mha/images/Swach-india.png">
+    <img src="https://mha.gov.in/sites/all/themes/cmf/images/Banner.png">
+    <img src="https://mha.gov.in/sites/all/themes/cmf/images/Code_PortalNEW.jpg">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <img class="navbar-brand" src="https://mpng.subpng.com/20190728/lyx/kisspng-house-openclipart-silhouette-line-art-drawing-zervas-law-offices-5d3d1f519c3b13.2498477615642868016399.jpg" height="50" width="50">
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbar10" data-toggle="dropdown">
+                About Us+
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">About the ministry</a>
+                <a class="dropdown-item" href="#">Who is who</a>
+                <a class="dropdown-item" href="#">Meet the minister</a>
+                <a class="dropdown-item" href="#">Meet the secretary</a>
+            </div>
+          </li>
+        </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbar1" data-toggle="dropdown">
+                Media+
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Whats new</a>
+           <a class="dropdown-item" href="#">Photo gallery</a>
+           <a class="dropdown-item" href="#">Video gallery</a>
+           <a class="dropdown-item" href="#">Speeches/Interviews</a>
+            </div>
+          </li>
+        </ul>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Departments Of MHA</a>
+          </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbar2" data-toggle="dropdown">
+                Divisons of MHA+
+            </a>
+            <div class="dropdown-menu">
+             <a class="dropdown-item" href="#">Administration Division</a>
+             <a class="dropdown-item" href="#">Border-managementI Division</a>
+             <a class="dropdown-item" href="#">Border-managementII Division</a>
+             <a class="dropdown-item" href="#">Centre State Division</a>
+            </div>
+          </li>
+        </ul>
+        
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbar3" data-toggle="dropdown">
+                Services+
+            </a>
+            <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">FCRA</a>
+            <a class="dropdown-item" href="#">E-Gazzette</a>
+            <a class="dropdown-item" href="#">Interact with PM</a>
+            <a class="dropdown-item" href="#">Udaan</a>
+            </div>
+          </li>
+        </ul>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbar4" data-toggle="dropdown">
+                Documents+
+            </a>
+            <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Archives</a>
+            <a class="dropdown-item" href="#">Annual Reports</a>
+            <a class="dropdown-item" href="#">Downloads </a>
+            <a class="dropdown-item" href="#">National Advis ories</a>
+            </div>
+          </li>
+        </ul>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbar6" data-toggle="dropdown">
+            Notifications+
+        </a>
+        <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Whats new</a>
+        <a class="dropdown-item" href="#">Photo gallery</a>
+        <a class="dropdown-item" href="#">Video gallery</a>
+        <a class="dropdown-item" href="#">Speeches/Interviews</a>
+        </div>
+      </li>
+    </ul>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbar6" data-toggle="dropdown">
+            RTI+
+        </a>
+        <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Proactive Disclosure</a>
+       
+        </div>
+      </li>
+    </ul>
+  
+    <li class="nav-item">
+        <a class="nav-link" href="#">Acts & Rules</a>
+      </li>
+    </nav>
+      <div id="demo" class="carousel slide" data-ride="carousel">
+      
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+      
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://mha.gov.in/sites/default/files/juGajmc1gOVBUtt5.jpg" alt="Los Angeles" width="2225">
+          </div>
+          <div class="carousel-item">
+            <img src="https://mha.gov.in/sites/default/files/PHOTO-2020.jpg" alt="Chicago" width="2225">
+          </div>
+          <div class="carousel-item">
+            <img src="https://mha.gov.in/sites/default/files/Untitled_5.png" alt="New York" width="2225">
+          </div>
+        </div>
+      
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      
+      </div>
+    
+
+      <h3> WHAT'S NEW <span class="badge badge-danger">NEW</span></h3>
+      <br> <br>
+      <p>Corrigendum No. 1 dated 29.06.2021 to RFP floated on 18.6.2021 regarding Evaluation of police stations to select and rank<br>
+        best Police Stations in the Country (192.92 KB) pdf
+      </p>
+      <p>DO Letter to Administrators regarding MHA Order dated 29.6.2021 (1.14 MB)</p>
+      <p>DO Letter to Chief Secretaries regarding MHA Order dated 29.6.2021 (1.15 MB)</p>
+      <p>MHA Order Dt. 29.6.2021 for containment of Covid 19 (4.45 MB)</p>
+      <button data-toggle="collapse" data-target="#demo">More ></button>
+      <div id="demo" class="collapse">
+<p>D.O. Letters issued from HS on 19.06.2021 to Chief Secretaries of all States and Administrators of Union Territories (254.54 KB) pdf<br><br>
+  Advisory on Dealing with Mental Health issues of Prisoners and prison inmates dated 24.6.2021 (6.79 MB) pdf<br><br>
+  RFP for Evaluation of police stations to select and rank best Police Stations in the Country (6.19 MB) pdf<br><br>
+  MHA DO dt 19.06.21 to UTs advising to follow CAB and test-track-treat-vaccinate strategy (383.07 KB) pdf<br><br>
+  MHA DO dt 19.06.21 to States advising to follow CAB and test-track-treat-vaccinate strategy (408.76 KB) pdf<br><br>
+  International Yoga Day, 2021 (55.82 KB) pdf<br><br>
+  Recommendation for the award of President's Police Medal for Distinguished Service and Police Medal for Meritorious Service on the occasion of Independence Day- 2021. Extension of date (339.95 KB) pdf<br><br>
+  Appointment to the Post of Member (Planning & Development) of the Land Ports Authority of India (LPAI) on Deputation Basis - Inviting Applications- (250.32 KB) pdf<br><br>
+  Death of Sir Anerood Jagnauth, Former President and former Prime Minister of the Republic of Mauritius (519.59 KB) pdf<br><br>
+  Invitation to attend 6th Training-of-Trainers (ToT) course for Trainers of Formed Police Units (FPUs) (3.39 MB) pdf<br><br>
+  MHA DO Lr. Dt. 27.5.2021 to Administrators reg extension of containment measures upto 30.6.2021 (768.24 KB) pdf<br><br>
+  MHA DO Lr. Dt. 27.5.2021 to Chief Secretaries reg extension of containment measures upto 30.6.2021 (771.72 KB) pdf<br><br>
+  MHA Order Dt. 27.5.2021 reg extension of containment measures upto 30.6.2021 (490.43 KB) pdf<br><br>
+  Campaign for the Senior Police Leadership Roster (SPLR) (12.01 MB) pdf<br><br>
+  Advisory for protection of vulnerable sections of society such as women, children, senior citizens and Scheduled Caste/Scheduled tribe (14.47 MB) pdf<br><br>
+  Inviting of nominations against the advertisement for the post of Police Chief of Operations, P-4 level with United Nations Mission in the Republic of South Sudan (UNMISS) (6.9 MB) pdf<br><br>
+  Anti Terrorism Day, 2021 (734.35 KB) pdf<br>
+  Recommendation for the award of Union Home Minister's Medal for Excellence in Investigation for the Year-2021- reg. (280.47 KB) pdf<br><br>
+  Recommendation for the award of President's Police Medal for Distinguished Service and Police Medal for Meritorious Service on the occasion of Independence Day- 2021 (339.08 KB) pdf<br><br>
+  Contagion of Covid 19 virus in prisons, Order issued by the Honble Supreme Court of India on 7.5.2021 (195.59 KB) pdf<br><br>
+  MHA Order dated 29.04.2021 for implementation of containment measure for covid -19 (5.54 MB) pdf</p><br>
+      </div>
+      <div class="card-deck">
+        <div class="card bg-secondary">
+          <div class="card-body">
+            <h4>E-Governance Services</h4>
+            <img src="https://mha.gov.in/sites/all/themes/mha/images/img-egov-serv.png" width="250">
+            <ul class="card-text">
+<li>Former Governors
+</li> <br>
+<li>
+  Apply Visiting Tibetan Settlement
+ </li><br>
+<li>BADP Online Management System</li><br>
+<li>e-Gazette</li><br>
+<li>Important Announcement</li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="card bg-secondary">
+          <div class="card-body">
+            <h4>Information For</h4>
+            <img src="https://mha.gov.in/sites/all/themes/mha/images/img-info-serv1.png" width="250">
+            <ul class="card-text">
+              <li>   Hon'ble PMs Speech on Good Governance
+              </li> <br>
+              <li>Hon'ble HMs Speech</li><br>
+              <li>Donate to PMs Relief Fund</li><br>
+            <li>Public Grievances</li><br>
+          <li>Vacancies</li><br>
+
+          </div>
+        </div>
+        <div class="card bg-secondary">
+          <div class="card-body">
+            <h4>
+              Current Affairs
+
+            </h4>
+            <img src="https://mha.gov.in/sites/all/themes/mha/images/img-affair-serv.png" width="250">
+            <ul class="card-text">
+              <li>Press Releases</li><br>
+              <li>PMRP and DMU Reports </li><br> 
+                <li>Tenders/Advertisements</li><br> 
+                  <li>Parliament Q&A</li><br> 
+                    <li> Answers to Parliament Questions-MHA </li><br> 
+            </ul>
+        </div>
+        </div>
+        <div class="card bg-secondary">
+          <div class="card-body">
+            <h4>
+For Safer India
+            </h4>
+            <img src="https://mha.gov.in/sites/all/themes/mha/images/img-safer-ind-serv.png" width="250">
+            <p class="card-text"><b>
+              Know your Security<br><br>
+Prevention & Protection<br><br>
+Preparedness & Response<br><br>
+Communal Violence<br><br>
+Banned Organizations<br><br>
+Individual Terrorists Under UAPA<br><br>
+ORDERS/ADVISORIES FOR COVID-19<br><br>
+            </b></p>
+          </div>
+        </div>
+        <br><br>
+      </div>
+      <div class="jumbotron text-center" style="margin-bottom:0">
+        <img src="file:///C:/Users/sayhi/Downloads/Image20210709181428.png">
+      </div>
+
+</body>
+</html>
